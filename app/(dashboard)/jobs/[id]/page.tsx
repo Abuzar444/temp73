@@ -1,21 +1,19 @@
-import EditJobForm from '@/components/EditJobForm';
-import { getSingleJobAction } from '@/utils/actions';
+import EditJobForm from "@/components/EditJobForm";
+import { getSingleJobAction } from "@/utils/actions";
 import {
   HydrationBoundary,
   QueryClient,
   dehydrate,
   useQuery,
-} from '@tanstack/react-query';
-import { usePathname } from 'next/navigation';
-import React from 'react';
+} from "@tanstack/react-query";
+import { usePathname } from "next/navigation";
+import React from "react";
 
-const SingleJobPage: React.FC<{ params: { id: string } }> = async ({
-  params,
-}) => {
+const SingleJobPage = async ({ params }: { params: { id: string } }) => {
   const { id } = params;
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
-    queryKey: ['job', id],
+    queryKey: ["job", id],
     queryFn: () => getSingleJobAction(id),
   });
 
