@@ -6,7 +6,6 @@ import {
   dehydrate,
   useQuery,
 } from "@tanstack/react-query";
-import { usePathname } from "next/navigation";
 import React from "react";
 
 const SingleJobPage = async ({ params }: { params: { id: string } }) => {
