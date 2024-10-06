@@ -1,8 +1,9 @@
-import React from 'react';
+"use client";
+import React from "react";
 
 const loading: React.FC = () => {
   return (
-    <div className="loading loading-spinner text-primary loading-lg"></div>
+    <div className='loading loading-spinner text-primary loading-lg'></div>
   );
 };
 
